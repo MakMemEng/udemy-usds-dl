@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+    jupyter:
+        container_name: jupyter-dl-env
+        image: datascientistus/dl-python-env
+        build: .
+        ports:
+            - 8888:8888
+        environment:
+            - JUPYTER_ENABLE_LAB=yes
+        volumes:
+            - ../workspace/:/work
+        # command: start-notebook.sh
